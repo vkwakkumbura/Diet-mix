@@ -1,0 +1,49 @@
+/*********************************************
+ * OPL 12.10.0.0 Data
+ * Author: METROPOLITAN
+ * Creation Date: Jan 3, 2021 at 8:30:45 PM
+ *********************************************/
+
+/****************************************************************************************************************************/
+ 
+ 
+ /****************************DATA FILE************************************************************************************************/
+ 
+ 
+ 
+// YOU HAVE TO CHANGE THIS IF ONLY YOU ARE GOING TO ADD OR REMOVE NUTRIENT. 
+
+Nut = { "Prot" ,"Carb" ,"Fat" }; 
+
+
+
+
+// THIS IS SHEET CONNECTION TO YOUR EXCEL OR OPEN OFFICE FILE. Book.ods is the reading file
+
+SheetConnection my_sheet("Book1.ods");
+ 
+ 
+ 
+ 
+ 
+ 
+ // "my" is the sheet name of your reading Excel file. You can see it lower conner in the excel sheet
+ // Ingr= Food 
+ // CostRaw is matrix type.
+ // price = price
+ // YOU HAVE TO CHANGE ONLY 2ND  CELL NUMBERS ACCORDINGLY WHEN YOU ARE ADDING OR REMOVING FOOD ITEM IN THE LIST
+ 
+ 
+Ingr from SheetRead (my_sheet,"'my'!    A2:        A31");
+CostRaw from SheetRead (my_sheet,"'my'! B2:        D31");
+price from SheetRead (my_sheet,"'my'!   F2:        F31");
+
+
+
+
+
+
+// KEEP THIS AS IT IS. It have to change if only you are going to increase or decrease Nutrients.
+// you can set the blend from Excel sheet
+Stock from SheetRead (my_sheet,"'my'!J2:L2");
+ 
